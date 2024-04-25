@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Successfully Applied</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa; /* Light gray background */
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .success-message {
+            text-align: center;
+        }
+
+        .tick-mark {
+            color: #28a745; /* Green color */
+            font-size: 100px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .go-back-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff; /* Blue color */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .go-back-button:hover {
+            background-color: #0056b3; /* Darker blue color */
+        }
+    </style>
+</head>
+<body>
+    <div class="success-message">
+        <div class="tick-mark">&#10004;</div>
+        <p>Your application has been successfully submitted!</p>
+    </div>
+
+    <!-- Go Back Button -->
+    <button class="go-back-button" onclick="window.location.href='home.html'">Go Back</button>
+</body>
+</html>

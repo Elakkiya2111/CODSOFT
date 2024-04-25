@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employer Dashboard</title>
+    <style>
+        body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #343349;
+}
+
+.container {
+width:90%;
+margin: 20px auto;
+padding: 20px;
+background-color: #ffffff; 
+border-radius: 10px;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+
+.row {
+display: flex;
+justify-content: space-between;
+margin-bottom: 20px;
+}
+
+.card, .graph, table {
+width: calc(33.33% - 20px);
+background-color: #fff;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s ease;
+margin-right: 40px;
+height:250px;
+}
+
+.card:hover, .graph:hover {
+transform: translateY(-5px);
+}
+
+.graph img {
+width: 100%;
+border-radius: 10px;
+}
+
+.graph-caption {
+margin-top: 10px;
+text-align: center;
+}
+
+h1, h2 {
+text-align: center;
+margin-bottom: 20px;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
+}
+
+th, td {
+padding: 10px;
+text-align: left;
+border-bottom: 1px solid #ddd;
+}
+
+th {
+background-color: #007bff;
+color: #fff;
+}
+
+tr:nth-child(even) {
+background-color: #f2f2f2;
+}
+
+caption {
+font-size: 24px;
+margin-bottom: 10px;
+color: #333;
+}
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #ffffff;
+}
+
+.container {
+
+margin: 20px auto;
+padding: 20px;
+background-color: #ffffff;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.containers {
+
+margin: 20px auto;
+padding: 20px;
+background-color: #fff;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+text-align: center;
+margin-bottom: 20px;
+}
+
+.pie-chart {
+width: 300px;
+height: 300px;
+border-radius: 50%;
+position: relative;
+overflow: hidden;
+margin: 0 auto;
+}
+
+.slice {
+position: absolute;
+width: 100%;
+height: 100%;
+clip: rect(0, 150px, 300px, 0);
+}
+
+.slice::after {
+content: "";
+position: absolute;
+width: 100%;
+height: 100%;
+background-color: transparent;
+border-radius: 50%;
+clip: rect(0, 300px, 300px, 150px);
+transform-origin: center;
+}
+
+.high-value {
+transform: rotate(0deg);
+background-color: #007bff;
+}
+
+.low-value {
+transform: rotate(135deg);
+background-color: #28a745;
+}
+
+.regular {
+transform: rotate(225deg);
+background-color: #ffc107;
+}
+
+.center {
+position: absolute;
+width: 100px;
+height: 100px;
+background-color: #fff;
+border-radius: 50%;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: 2;
+text-align: center;
+line-height: 100px;
+}
+
+.label {
+position: absolute;
+width: 200px;
+height: 40px;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+text-align: center;
+line-height: 40px;
+font-weight: bold;
+color: #333;
+margin-left:100PX;
+}
+.bg{
+background-color:#007bff;
+color:white;
+font-size: 20px;
+padding:10px;
+}
+.container {
+
+margin: 20px auto;
+}
+
+.bar {
+background-color: #007bff;
+margin-bottom: 5px;
+transition: width 0.5s ease-in-out;
+}
+
+.bar-label {
+margin-bottom: 5px;
+}
+.bar-graph {
+position: relative;
+height: 300px;
+width: 600px;
+margin: 20px auto;
+border: 1px solid #ccc;
+display: flex;
+flex-direction: row;
+align-items: flex-end; 
+margin-left:55px;
+margin-top:60px;
+}
+.bar {
+height: 100%;
+width: 50px; 
+margin-right: 5px;
+transition: height 0.5s ease;
+position: relative;
+}
+.month-label {
+position: absolute;
+bottom: -20px; 
+left: 50%; 
+transform: translateX(-50%);
+font-size: 12px;
+}
+.y-axis {
+position: absolute;
+left: -40px;
+top: 0;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+height: 100%;
+}
+.y-label {
+font-size: 12px;
+transform: translateY(50%);
+}
+.button{
+    padding:5px;
+    background-color:yellow;
+    
+
+}
+.buttons{
+    padding:5px;
+    background-color:green;
+  
+}
+.buttonss{
+    padding:5px;
+    background-color:blue;
+     
+}
+
+
+.vertical-text {
+    writing-mode: vertical-rl; /* This will rotate the text vertically */
+    text-orientation: mixed; /* Optional: This controls the orientation of the glyphs in a line of text */
+    /* You can add more styling here */
+  }
+
+    .bar-graph {
+      flex: 1;
+      display: flex;
+    }
+    .bar {
+      width: 20px; 
+      margin-right: 5px; 
+    }
+    .y-axis {
+      padding-right: 10px; 
+    }
+    .y-label {
+      text-align: right;
+    }
+ 
+    .ring-chart {
+      flex: 1;
+      margin-right: 10px;
+     height:250px; 
+    }
+    .containers {
+      display: flex;
+      justify-content: space-between;
+     /* Adjust height as needed */
+    }
+    .containers {
+      display: flex;
+      height:400px;
+    }
+    .chart-container {
+            width: 600px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+
+        .bar {
+            height: 30px;
+            background-color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .bar-text {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .uk-bar {
+            width: calc((4 / 5) * 100%);
+        }
+
+        .australia-bar {
+            width: calc((3 / 5) * 100%);
+            background-color: #36a2eb;
+        }
+
+        .overtime{
+          width:100px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Employer Dashboard</h1>
+        <div class="row">
+          <div class="card">
+            <h2 class="bg">Technical Hiring</h2>
+            <p>18 days to hire</p>
+            <p>54 days to fill</p>
+            <p>98% acceptance rate</p>
+            <p>4.8% withdrawal rate</p>
+        </div>
+        <div class="card">
+            <h2 class="bg">Non-Technical Hiring</h2>
+            <p>23 days to hire</p>
+            <p>40 days to fill</p>
+            <p>100% acceptance rate</p>
+            <p>4% withdrawal rate</p>
+        </div>
+        <div style="width: 50%;">
+            <canvas id="employeeChart" width="300" height="150"></canvas>
+        </div>
+        </div>
+
+        <div class="container">
+            <caption>Current Hiring Pipeline</caption>
+            <table>
+              <thead>
+                <tr>
+                    <th>Stage</th>
+                    <th>Candidates</th>
+                    <th>Interviews</th>
+                    <th>Offers</th>
+                    <th>Hires</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>New Applications</td>
+                    <td>25</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>Screening</td>
+                    <td>15</td>
+                    <td>10</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>Interviews</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>5</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Offer Extended</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>Hired</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>2</td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+   
+        <div class="container">
+          <div class="row">
+            <div class="bar-graph">
+              <div class="bar" style="height: 30%; background: linear-gradient(to bottom, #329bf1, #ffffff); "></div>
+              <div class="bar" style="height: 35%; background: linear-gradient(to bottom, #2d6db1, #ffffff); "></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #1ddaca, #ffffff); "></div>
+              <div class="bar" style="height: 40%; background: linear-gradient(to bottom, #473dd8, #ffffff); "></div>
+              <div class="bar" style="height: 45%; background: linear-gradient(to bottom, #28149c, #ffffff); "></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #1895ac, #ffffff); "></div>
+              <div class="bar" style="height: 55%; background: linear-gradient(to bottom, #269ae7, #ffffff); "></div>
+              <div class="bar" style="height: 58%; background: linear-gradient(to bottom, #007bff, #ffffff); "></div>
+              <div class="bar" style="height: 53%; background: linear-gradient(to bottom, #17a7c0, #ffffff);"></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #14728f, #ffffff); "></div>
+              <div class="bar" style="height: 60%; background: linear-gradient(to bottom, #099add, #ffffff); "></div>
+              <div class="bar" style="height: 69%; background: linear-gradient(to bottom, #329bf1, #ffffff); "></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #2d6db1, #ffffff); "></div>
+              <div class="bar" style="height: 60%; background: linear-gradient(to bottom, #1ddaca, #ffffff); "></div>
+              <div class="bar" style="height: 66%; background: linear-gradient(to bottom, #473dd8, #ffffff); "></div>
+              <div class="bar" style="height: 60%; background: linear-gradient(to bottom, #28149c, #ffffff); "></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #1895ac, #ffffff); "></div>
+              <div class="bar" style="height: 55%; background: linear-gradient(to bottom, #269ae7, #ffffff); "></div>
+              <div class="bar" style="height: 70%; background: linear-gradient(to bottom, #007bff, #ffffff); "></div>
+              <div class="bar" style="height: 40%; background: linear-gradient(to bottom, #17a7c0, #ffffff);"></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #14728f, #ffffff); "></div>
+              <div class="bar" style="height: 95%; background: linear-gradient(to bottom, #099add, #ffffff); "></div>
+              <div class="bar" style="height: 30%; background: linear-gradient(to bottom, #329bf1, #ffffff); "></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #2d6db1, #ffffff); "></div>
+              <div class="bar" style="height: 80%; background: linear-gradient(to bottom, #1ddaca, #ffffff); "></div>
+              <div class="bar" style="height: 40%; background: linear-gradient(to bottom, #473dd8, #ffffff); "></div>
+              <div class="bar" style="height: 60%; background: linear-gradient(to bottom, #28149c, #ffffff); "></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #1895ac, #ffffff); "></div>
+              <div class="bar" style="height: 55%; background: linear-gradient(to bottom, #269ae7, #ffffff); "></div>
+              <div class="bar" style="height: 30%; background: linear-gradient(to bottom, #007bff, #ffffff); "></div>
+              <div class="bar" style="height: 40%; background: linear-gradient(to bottom, #17a7c0, #ffffff);"></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #14728f, #ffffff); "></div>
+              <div class="bar" style="height: 55%; background: linear-gradient(to bottom, #099add, #ffffff); "></div>
+              <div class="bar" style="height: 40%; background: linear-gradient(to bottom, #077ddd, #ffffff); "></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #2d6db1, #ffffff); "></div>
+              <div class="bar" style="height: 80%; background: linear-gradient(to bottom, #1ddaca, #ffffff); "></div>
+              <div class="bar" style="height: 40%; background: linear-gradient(to bottom, #473dd8, #ffffff); "></div>
+              <div class="bar" style="height: 60%; background: linear-gradient(to bottom, #28149c, #ffffff); "></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #065ac7, #ffffff); "></div>
+              <div class="bar" style="height: 55%; background: linear-gradient(to bottom, #269ae7, #ffffff); "></div>
+              <div class="bar" style="height: 30%; background: linear-gradient(to bottom, #007bff, #ffffff); "></div>
+              <div class="bar" style="height: 40%; background: linear-gradient(to bottom, #17a7c0, #ffffff);"></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #1bcaff, #ffffff); "></div>
+              <div class="bar" style="height: 65%; background: linear-gradient(to bottom, #099add, #ffffff); "></div>
+              <div class="bar" style="height: 73%; background: linear-gradient(to bottom, #329bf1, #ffffff); "></div>
+              <div class="bar" style="height: 77%; background: linear-gradient(to bottom, #2d6db1, #ffffff); "></div>
+              <div class="bar" style="height: 60%; background: linear-gradient(to bottom, #1ddaca, #ffffff); "></div>
+              <div class="bar" style="height: 79%; background: linear-gradient(to bottom, #473dd8, #ffffff); "></div>
+              <div class="bar" style="height: 73%; background: linear-gradient(to bottom, #6e5ae2, #ffffff); "></div>
+              <div class="bar" style="height: 60%; background: linear-gradient(to bottom, #1895ac, #ffffff); "></div>
+              <div class="bar" style="height: 85%; background: linear-gradient(to bottom, #269ae7, #ffffff); "></div>
+              <div class="bar" style="height: 70%; background: linear-gradient(to bottom, #007bff, #ffffff); "></div>
+              <div class="bar" style="height: 79%; background: linear-gradient(to bottom, #17a7c0, #ffffff);"></div>
+              <div class="bar" style="height: 70%; background: linear-gradient(to bottom, #14728f, #ffffff); "></div>
+              <div class="bar" style="height: 77%; background: linear-gradient(to bottom, #18536e, #ffffff); "></div>
+
+
+
+
+
+
+
+
+
+
+
+
+              <div class="bar" style="height: 30%; background: linear-gradient(to bottom, #329bf1, #ffffff); "></div>
+              <div class="bar" style="height: 35%; background: linear-gradient(to bottom, #2d6db1, #ffffff); "></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #1ddaca, #ffffff); "></div>
+              <div class="bar" style="height: 40%; background: linear-gradient(to bottom, #473dd8, #ffffff); "></div>
+              <div class="bar" style="height: 45%; background: linear-gradient(to bottom, #28149c, #ffffff); "></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #1895ac, #ffffff); "></div>
+              <div class="bar" style="height: 55%; background: linear-gradient(to bottom, #269ae7, #ffffff); "></div>
+              <div class="bar" style="height: 58%; background: linear-gradient(to bottom, #007bff, #ffffff); "></div>
+              <div class="bar" style="height: 53%; background: linear-gradient(to bottom, #17a7c0, #ffffff);"></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #14728f, #ffffff); "></div>
+              <div class="bar" style="height: 60%; background: linear-gradient(to bottom, #099add, #ffffff); "></div>
+              <div class="bar" style="height: 69%; background: linear-gradient(to bottom, #329bf1, #ffffff); "></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #2d6db1, #ffffff); "></div>
+              <div class="bar" style="height: 60%; background: linear-gradient(to bottom, #1ddaca, #ffffff); "></div>
+              <div class="bar" style="height: 66%; background: linear-gradient(to bottom, #473dd8, #ffffff); "></div>
+              <div class="bar" style="height: 60%; background: linear-gradient(to bottom, #28149c, #ffffff); "></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #1895ac, #ffffff); "></div>
+              <div class="bar" style="height: 55%; background: linear-gradient(to bottom, #269ae7, #ffffff); "></div>
+              <div class="bar" style="height: 70%; background: linear-gradient(to bottom, #007bff, #ffffff); "></div>
+              <div class="bar" style="height: 40%; background: linear-gradient(to bottom, #17a7c0, #ffffff);"></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #14728f, #ffffff); "></div>
+              <div class="bar" style="height: 95%; background: linear-gradient(to bottom, #099add, #ffffff); "></div>
+              <div class="bar" style="height: 30%; background: linear-gradient(to bottom, #329bf1, #ffffff); "></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #2d6db1, #ffffff); "></div>
+              <div class="bar" style="height: 80%; background: linear-gradient(to bottom, #1ddaca, #ffffff); "></div>
+              <div class="bar" style="height: 40%; background: linear-gradient(to bottom, #473dd8, #ffffff); "></div>
+              <div class="bar" style="height: 60%; background: linear-gradient(to bottom, #28149c, #ffffff); "></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #1895ac, #ffffff); "></div>
+              <div class="bar" style="height: 55%; background: linear-gradient(to bottom, #269ae7, #ffffff); "></div>
+              <div class="bar" style="height: 30%; background: linear-gradient(to bottom, #007bff, #ffffff); "></div>
+              <div class="bar" style="height: 40%; background: linear-gradient(to bottom, #17a7c0, #ffffff);"></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #14728f, #ffffff); "></div>
+              <div class="bar" style="height: 55%; background: linear-gradient(to bottom, #099add, #ffffff); "></div>
+              <div class="bar" style="height: 40%; background: linear-gradient(to bottom, #077ddd, #ffffff); "></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #2d6db1, #ffffff); "></div>
+              <div class="bar" style="height: 80%; background: linear-gradient(to bottom, #1ddaca, #ffffff); "></div>
+              <div class="bar" style="height: 40%; background: linear-gradient(to bottom, #473dd8, #ffffff); "></div>
+              <div class="bar" style="height: 60%; background: linear-gradient(to bottom, #28149c, #ffffff); "></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #065ac7, #ffffff); "></div>
+              <div class="bar" style="height: 55%; background: linear-gradient(to bottom, #269ae7, #ffffff); "></div>
+              <div class="bar" style="height: 30%; background: linear-gradient(to bottom, #007bff, #ffffff); "></div>
+              <div class="bar" style="height: 40%; background: linear-gradient(to bottom, #17a7c0, #ffffff);"></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #1bcaff, #ffffff); "></div>
+              <div class="bar" style="height: 65%; background: linear-gradient(to bottom, #099add, #ffffff); "></div>
+              <div class="bar" style="height: 73%; background: linear-gradient(to bottom, #329bf1, #ffffff); "></div>
+              <div class="bar" style="height: 77%; background: linear-gradient(to bottom, #2d6db1, #ffffff); "></div>
+              <div class="bar" style="height: 60%; background: linear-gradient(to bottom, #1ddaca, #ffffff); "></div>
+              <div class="bar" style="height: 79%; background: linear-gradient(to bottom, #473dd8, #ffffff); "></div>
+              <div class="bar" style="height: 73%; background: linear-gradient(to bottom, #6e5ae2, #ffffff); "></div>
+              <div class="bar" style="height: 60%; background: linear-gradient(to bottom, #1895ac, #ffffff); "></div>
+              <div class="bar" style="height: 85%; background: linear-gradient(to bottom, #269ae7, #ffffff); "></div>
+              <div class="bar" style="height: 70%; background: linear-gradient(to bottom, #007bff, #ffffff); "></div>
+              <div class="bar" style="height: 79%; background: linear-gradient(to bottom, #17a7c0, #ffffff);"></div>
+              <div class="bar" style="height: 80%; background: linear-gradient(to bottom, #14728f, #ffffff); "></div>
+              <div class="bar" style="height: 88%; background: linear-gradient(to bottom, #18536e, #ffffff); "></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              <div class="bar" style="height: 30%; background: linear-gradient(to bottom, #329bf1, #ffffff); "></div>
+              <div class="bar" style="height: 35%; background: linear-gradient(to bottom, #2d6db1, #ffffff); "></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #1ddaca, #ffffff); "></div>
+              <div class="bar" style="height: 40%; background: linear-gradient(to bottom, #473dd8, #ffffff); "></div>
+              <div class="bar" style="height: 45%; background: linear-gradient(to bottom, #28149c, #ffffff); "></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #1895ac, #ffffff); "></div>
+              <div class="bar" style="height: 55%; background: linear-gradient(to bottom, #269ae7, #ffffff); "></div>
+              <div class="bar" style="height: 58%; background: linear-gradient(to bottom, #007bff, #ffffff); "></div>
+              <div class="bar" style="height: 53%; background: linear-gradient(to bottom, #17a7c0, #ffffff);"></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #14728f, #ffffff); "></div>
+              <div class="bar" style="height: 60%; background: linear-gradient(to bottom, #099add, #ffffff); "></div>
+              <div class="bar" style="height: 69%; background: linear-gradient(to bottom, #329bf1, #ffffff); "></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #2d6db1, #ffffff); "></div>
+              <div class="bar" style="height: 60%; background: linear-gradient(to bottom, #1ddaca, #ffffff); "></div>
+              <div class="bar" style="height: 66%; background: linear-gradient(to bottom, #473dd8, #ffffff); "></div>
+              <div class="bar" style="height: 60%; background: linear-gradient(to bottom, #28149c, #ffffff); "></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #1895ac, #ffffff); "></div>
+              <div class="bar" style="height: 55%; background: linear-gradient(to bottom, #269ae7, #ffffff); "></div>
+              <div class="bar" style="height: 70%; background: linear-gradient(to bottom, #007bff, #ffffff); "></div>
+              <div class="bar" style="height: 40%; background: linear-gradient(to bottom, #17a7c0, #ffffff);"></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #14728f, #ffffff); "></div>
+              <div class="bar" style="height: 95%; background: linear-gradient(to bottom, #099add, #ffffff); "></div>
+              <div class="bar" style="height: 30%; background: linear-gradient(to bottom, #329bf1, #ffffff); "></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #2d6db1, #ffffff); "></div>
+              <div class="bar" style="height: 80%; background: linear-gradient(to bottom, #1ddaca, #ffffff); "></div>
+              <div class="bar" style="height: 40%; background: linear-gradient(to bottom, #473dd8, #ffffff); "></div>
+              <div class="bar" style="height: 60%; background: linear-gradient(to bottom, #28149c, #ffffff); "></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #1895ac, #ffffff); "></div>
+              <div class="bar" style="height: 55%; background: linear-gradient(to bottom, #269ae7, #ffffff); "></div>
+              <div class="bar" style="height: 30%; background: linear-gradient(to bottom, #007bff, #ffffff); "></div>
+              <div class="bar" style="height: 40%; background: linear-gradient(to bottom, #17a7c0, #ffffff);"></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #14728f, #ffffff); "></div>
+              <div class="bar" style="height: 55%; background: linear-gradient(to bottom, #099add, #ffffff); "></div>
+              <div class="bar" style="height: 40%; background: linear-gradient(to bottom, #077ddd, #ffffff); "></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #2d6db1, #ffffff); "></div>
+              <div class="bar" style="height: 80%; background: linear-gradient(to bottom, #1ddaca, #ffffff); "></div>
+              <div class="bar" style="height: 40%; background: linear-gradient(to bottom, #473dd8, #ffffff); "></div>
+              <div class="bar" style="height: 60%; background: linear-gradient(to bottom, #28149c, #ffffff); "></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #065ac7, #ffffff); "></div>
+              <div class="bar" style="height: 55%; background: linear-gradient(to bottom, #269ae7, #ffffff); "></div>
+              <div class="bar" style="height: 30%; background: linear-gradient(to bottom, #007bff, #ffffff); "></div>
+              <div class="bar" style="height: 40%; background: linear-gradient(to bottom, #17a7c0, #ffffff);"></div>
+              <div class="bar" style="height: 50%; background: linear-gradient(to bottom, #1bcaff, #ffffff); "></div>
+              <div class="bar" style="height: 65%; background: linear-gradient(to bottom, #099add, #ffffff); "></div>
+              <div class="bar" style="height: 73%; background: linear-gradient(to bottom, #329bf1, #ffffff); "></div>
+              <div class="bar" style="height: 77%; background: linear-gradient(to bottom, #2d6db1, #ffffff); "></div>
+              <div class="bar" style="height: 60%; background: linear-gradient(to bottom, #1ddaca, #ffffff); "></div>
+              <div class="bar" style="height: 79%; background: linear-gradient(to bottom, #473dd8, #ffffff); "></div>
+              <div class="bar" style="height: 73%; background: linear-gradient(to bottom, #6e5ae2, #ffffff); "></div>
+              <div class="bar" style="height: 60%; background: linear-gradient(to bottom, #1895ac, #ffffff); "></div>
+              <div class="bar" style="height: 85%; background: linear-gradient(to bottom, #269ae7, #ffffff); "></div>
+              <div class="bar" style="height: 70%; background: linear-gradient(to bottom, #007bff, #ffffff); "></div>
+              <div class="bar" style="height: 79%; background: linear-gradient(to bottom, #17a7c0, #ffffff);"></div>
+              <div class="bar" style="height: 90%; background: linear-gradient(to bottom, #14728f, #ffffff); "></div>
+              <div class="bar" style="height: 95%; background: linear-gradient(to bottom, #18536e, #ffffff); "></div>
+
+
+
+
+              <div class="y-axis">
+                <div class="y-label">12k</div>
+                <div class="y-label">10k</div>
+                <div class="y-label">8k</div>
+                <div class="y-label">6k</div>
+                <div class="y-label">4k</div>
+                <div class="y-label">2k</div>
+               
+              </div>
+            </div>
+          <p><B>INCREASE IN DAILY PROFIT</B></p>       
+           </div>
+           
+          
+        </div>
+
+        <h3>Training Detials<h3>
+          <div class="containers">
+            <div class="row">
+
+            <div class="ring-chart" style="width: 400px;">
+              <h1>Angular</h1>
+              <canvas id="trainingDetail1Chart"></canvas>
+            </div>
+
+            <div class="ring-chart" style="width: 400px;">
+              <h1>Adobe XD</h1>
+              <canvas id="trainingDetail2Chart"></canvas>
+            </div>
+
+            </div class="ring-chart" style="width:400px;">
+               <canvas id="surveyChart1"></canvas></div>
+               </div>
+            </div>
+        </div>
+     
+          
+       
+       
+      </div>
+      </div>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <script>
+         const ctx = document.getElementById('employeeChart').getContext('2d');
+    const employeeChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [{
+          label: 'Productivity',
+          data: [10, 20, 30, 25, 35, 28],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      }
+    });
+      // Sample data for training detail 1
+  const trainingDetail1Data = {
+    labels: ['Completed', 'In Progress', 'Not Started'],
+    datasets: [{
+      label: 'Training Detail 1',
+      data: [20, 30, 50], // Sample data
+      backgroundColor: [
+        'rgba(75, 192, 192, 0.8)',
+        'rgba(255, 206, 86, 0.8)',
+        'rgba(255, 99, 132, 0.8)'
+      ],
+      borderWidth: 1
+    }]
+  };
+
+  // Sample data for training detail 2
+  const trainingDetail2Data = {
+    labels: ['Completed', 'In Progress', 'Not Started'],
+    datasets: [{
+      label: 'Training Detail 2',
+      data: [40, 20, 40], // Sample data
+      backgroundColor: [
+        'rgba(75, 192, 192, 0.8)',
+        'rgba(255, 206, 86, 0.8)',
+        'rgba(255, 99, 132, 0.8)'
+      ],
+      borderWidth: 1
+    }]
+  };
+
+  // Initialize training detail 1 chart
+  const trainingDetail1Ctx = document.getElementById('trainingDetail1Chart').getContext('2d');
+  const trainingDetail1Chart = new Chart(trainingDetail1Ctx, {
+    type: 'doughnut',
+    data: trainingDetail1Data,
+  });
+
+  // Initialize training detail 2 chart
+  const trainingDetail2Ctx = document.getElementById('trainingDetail2Chart').getContext('2d');
+  const trainingDetail2Chart = new Chart(trainingDetail2Ctx, {
+    type: 'doughnut',
+    data: trainingDetail2Data,
+  });
+   
+
+
+
+
+
+
+  var ctx1 = document.getElementById('surveyChart1').getContext('2d');
+        var surveyChart1 = new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: ['Work Environment', 'Benefits', 'Work-Life Balance', 'Career Growth'],
+                datasets: [{
+                    label: 'UK Office',
+                    data: [4, 3, 5, 4],
+                    backgroundColor: 'rgba(255, 99, 132, 0.5)'
+                }, {
+                    label: 'Australian Office',
+                    data: [3, 4, 4, 3],
+                    backgroundColor: 'rgba(54, 162, 235, 0.5)'
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Rating (out of 5)'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Aspects of Work'
+                        }
+                    }
+                }
+            }
+        });
+
+        var timeLabels1 = ['January', 'February', 'March', 'April', 'May', 'June'];
+        var overtimeData1 = [0, 5, 10, 8, 12, 15]; // Sample overtime ratio data
+
+        var ctx1 = document.getElementById('overtimeChart1').getContext('2d');
+        var overtimeChart1 = new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: timeLabels1,
+                datasets: [{
+                    label: 'Overtime Ratio (%)',
+                    data: overtimeData1,
+                    fill: false,
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Overtime Ratio (%)'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Month'
+                        }
+                    }
+                }
+            }
+        });
+
+    </script>
+   
+</body>
+</html>

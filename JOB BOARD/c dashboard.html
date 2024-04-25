@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Candidate Dashboard</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+background-color: #f3f3f3;
+margin: 0;
+padding: 0;
+}
+
+header {
+background-color: #3498db;
+color: #fff;
+padding: 20px;
+text-align: center;
+}
+
+nav a {
+color: #fff;
+text-decoration: none;
+margin-right: 20px;
+}
+
+section {
+background-color: #fff;
+margin: 20px;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.notification {
+background-color: #27ae91;
+color: #fff;
+padding: 10px;
+border-radius: 5px;
+margin-bottom: 10px;
+}
+
+.notification.warning {
+background-color: #22b8e6;
+}
+
+.notification.error {
+background-color: #3c9ae7;
+}
+
+.metric {
+font-size: 15px;
+margin-bottom: 10px;
+}
+
+.button {
+background-color: #3498db;
+color: #fff;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.button:hover {
+background-color: #2980b9;
+}
+#profile {
+background-color: #fff;
+margin: 20px;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s;
+width:1000px;
+text-align:center;
+margin-left:400px;
+}
+
+#profile:hover {
+transform: scale(1.05);
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+}
+
+.profile-item {
+margin-bottom: 10px;
+}
+
+.profile-label {
+font-weight: bold;
+margin-right: 10px;
+}
+
+.profile-edit {
+color: #3498db;
+cursor: pointer;
+}
+
+.profile-edit:hover {
+text-decoration: underline;
+}
+</style>
+</style>
+</head>
+<body>
+
+<header>
+<h1>Welcome to Your Candidate Dashboard</h1>
+<nav>
+<a href="#">Company Policies</a>
+<a href="#">FAQs</a>
+</nav>
+</header>
+<section id="profile">
+<h2>Profile Details</h2>
+<div class="profile-item">
+<span class="profile-label">Name:</span> John Doe
+
+</div>
+<div class="profile-item">
+<span class="profile-label">Email:</span> johndoe@example.com
+
+</div>
+<div class="profile-item">
+<span class="profile-label">Phone:</span> (123) 456-7890
+
+</div>
+<div class="profile-item">
+<span class="profile-label">Address:</span> 123 Main St, City, Country
+
+</div>
+<div class="profile-item">
+<span class="profile-label">Department:</span> Sales
+
+</div>
+<div class="profile-item">
+<span class="profile-label">Position:</span> Senior Sales Representative
+
+</div>
+</section>
+
+<section id="notifications">
+<h2>Notifications</h2>
+<div class="notification">New updates on project XYZ</div>
+<div class="notification warning">Reminder: Team meeting tomorrow</div>
+<div class="notification error">Urgent: Deadline for project ABC approaching</div>
+</section>
+
+<section id="performance">
+<h2>Performance Metrics</h2>
+<div class="metric">Sales: $50,000</div>
+<div class="metric">Customer Satisfaction: 90%</div>
+<button class="button">View Details</button>
+</section>
+
+
+
+<footer>
+<p style="text-align:center;">&copy; 2024 Your Company. All rights reserved.</p>
+
+</footer>
+
+
+<script>
+
+document.querySelector('.button').addEventListener('click', function() {
+alert('Details view is not implemented yet!');
+});
+</script>
+</body>
+</html>

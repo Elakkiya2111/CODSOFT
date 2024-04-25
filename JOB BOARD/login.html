@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Board</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+            height: 100vh;
+            background-image: url('bg.png');
+            background-color: #f0f0f0;
+            background-size: cover;
+    background-repeat:no-repeat;
+    object-fit: cover;
+        }
+
+        .container {
+           
+           
+            justify-content: space-between; /* Separate content into two sides */
+            align-items: center;
+            width: 80%;
+            
+           
+     /* Ensure the image takes up the entire width of its container */
+  
+            padding: 20px;
+            border-radius: 5px;
+           display:flex;
+            height:850px;
+            width:1700px;
+            padding-left:40px;
+        }
+
+        .left-side {
+           
+            width:700px;
+          MARGIN-left:150PX;
+         }
+
+        .left-side img {
+          
+            height: 500px;
+            width:600px;
+          
+        }
+
+        
+
+        .right-side {
+            flex: 2;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .login-details {
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+
+        .login-details p {
+            margin-bottom: 10px;
+        }
+
+        /* Media Query for Responsive Layout */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+           
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        /* Login and Sign Up Styles */
+        .form-container {
+            background-color: #fff;
+            max-width: 400px;
+            margin: 20px;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="password"],
+        .form-container button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-container button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+        .a{
+      
+  font-family: "Teko", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-size:60px;
+  margin-right:90px;
+}
+.b{
+  font-size:25px;
+  font-family: "Source Serif 4", serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.login-container {
+    background-color: #fff;
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+}
+
+input[type="text"],
+input[type="password"],
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+.containers{
+  margin-right:100px;
+}
+        
+    </style>
+</head>
+<body>
+  
+  <div class="container">
+    <div class="content">
+        <h1>Welcome to Job Board</h1>
+        <p>Find the perfect job opportunity that suits your skills and preferences.</p>
+        <div class="form-container">
+            <h2>Employee Login</h2>
+            <form action="login.php" method="POST">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+            </form>
+            <a href="loggedin.html" class="login-link">Login</a>
+            <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+        </div>
+    </div>
+</div>
+      <script>
+          document.querySelector('.signup-link').addEventListener('click', function() {
+              document.querySelectorAll('.form-container')[0].style.display = 'none';
+              document.querySelectorAll('.form-container')[1].style.display = 'block';
+          });
+  
+          document.querySelector('.login-link').addEventListener('click', function() {
+              document.querySelectorAll('.form-container')[0].style.display = 'block';
+              document.querySelectorAll('.form-container')[1].style.display = 'none';
+          });
+      </script>
+       
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
